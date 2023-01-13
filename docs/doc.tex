@@ -1,0 +1,72 @@
+\documentclass{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,includeheadfoot,margin=2.54cm,includehead]{geometry}
+\usepackage[mono]{notomath}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{fancyhdr}
+
+
+\begin{document}
+
+% ------------------------------------------------
+% | % Título, autor, materia, fecha, ciudad... % |
+% ------------------------------------------------
+\newcommand{\titulo}{Informe}
+\newcommand{\escuela}{Escuela de Ingeniería Informática}
+\newcommand{\autorAngel}{Ángel Iglesias Préstamo}
+\newcommand{\autorDiego}{Diego Martín Fernández}
+\newcommand{\asignatura}{Informática Audiovisual}
+\newcommand{\universidad}{Universidad de Oviedo}
+\newcommand{\fecha}{\today} % Muestra por defecto la fecha actual
+
+% ----------------------------------------------------------
+% | % Establecemos un estilo para el encabezado y el pie % |
+% ----------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhead[LE]{\scshape\asignatura}
+\fancyhead[RO]{\titulo}
+\fancyfoot[CE,CO]{\thepage}
+
+% -----------------------------
+% | % Portada del documento % |
+% -----------------------------
+\begin{titlepage}
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/uniovi.png}
+    \vfill
+    {\huge\bfseries\titulo\par}
+    \vspace{3cm}
+    {\Large\itshape\autorAngel\par\vspace{0.1cm}\autorDiego\par}
+    \vspace{1.5cm}
+    {\LARGE\escuela\par}
+    \vspace{0.5cm}
+    {\Large\asignatura\par}
+    \vfill
+    \universidad\par
+    \fecha
+\end{titlepage}
+
+% -----------------------------------------
+% | % Tabla de contenidos del documento % |
+% -----------------------------------------
+\renewcommand{\contentsname}{Tabla de contenidos}
+\tableofcontents{}
+
+% ---------------------------------------
+% | % Empezamos el documento en sí :D % |
+% ---------------------------------------
+
+
+\end{document}
