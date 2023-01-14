@@ -1,0 +1,14 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\begin{document}
+\begin{tikzpicture}[
+        vertex/.style={circle,draw=black,very thick,minimum size=20mm},
+        predicate/.style = {font=\footnotesize}
+    ]
+    \node[vertex] (thg) {Q11678};
+    \node[vertex] (dystopian) [right=2.5cm of thg] {Q15062348};
+
+    \path[-to] (thg) edge[bend left] node[predicate,above] {P136} (dystopian);
+\end{tikzpicture}
+\end{document}
