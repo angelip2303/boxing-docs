@@ -1,6 +1,7 @@
 ## System and generated files
 .idea
 .DS_Store
+.vscode
 
 ## Directories
 log
