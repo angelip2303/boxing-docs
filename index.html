@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>reveal.js</title>
+    <title>Slides of the Boxing Game project :D</title>
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
@@ -20,20 +20,194 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>
+          <h1 class="r-fit-text">
             <a href="https://angelip2303.github.io/boxing-game">
               Boxing game
             </a>
           </h1>
-          <h4>
+          <h4 class="r-fit-text">
             <small>
-              Escrito por
+              Creado por
               <a href="https://angelip2303.github.io/">
                 Ángel Iglesias Préstamo
               </a>
-              y Diego Martín Fernández
+              y
+              <a href="https://github.com/DiegoMfer">
+                Diego Martín Fernández
+              </a>
             </small>
           </h4>
+        </section>
+
+        <section>
+          <h2>Video promocional</h2>
+          <video src="video/ia.mp4" controls></video>
+        </section>
+
+        <section>
+          <section>
+            <h2>Tecnologías</h2>
+            <ul>
+              <li>
+                <a class="fragment highlight-red" href="https://p5js.org/es/">
+                  p5.js
+                </a>
+              </li>
+              <li>
+                <a href="https://ml5js.org/"> ml5.js </a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Ejemplo de uso de <span style="color: red">p5.js</span></h3>
+            <pre>
+              <code data-trim data-noescape data-line-numbers="4-7,9-11">
+                // HealthBar.js
+                draw(health) {
+                  if (health < 0) return;
+                  // Outer border
+                  p5.stroke(0);
+                  p5.strokeWeight(4);
+                  p5.noFill();
+                  p5.rect(this.x, this.y, this.width, this.height);
+                  // Inner (health) bar
+                  p5.noStroke();
+                  p5.fill(255, 0, 0); // fill RED
+                  p5.rect(this.x, this.y, p5.map(health, 0, 100, 0, this.width), this.height);
+                }
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Tecnologías</h2>
+            <ul>
+              <li>
+                <a href="https://p5js.org/es/"> p5.js </a>
+              </li>
+              <li>
+                <a class="fragment highlight-red" href="https://ml5js.org/">
+                  ml5.js
+                </a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Ejemplo de uso de <span style="color: red">ml5.js</span></h3>
+            <pre>
+              <code data-trim data-noescape>
+                // HumanPlayer.js 
+                export default class HumanPlayer extends Player {
+                  constructor(video, x, y, width, height, health) {
+                    super(x, y, width, height, health);
+                    this.media = p5.createCapture(video); // we capture the webcam
+                    this.media.size(width, height); // we fit the video to the width and height
+                    // We load the model from the camera source :D
+                    this.poseNet = ml5.poseNet(this.media);
+                    this.poseNet.on("pose", (poses) => this.updatePose(poses));
+                    this.media.hide(); // hide the video element, only show the canvas
+                  }
+                }
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Fases del desarrollo</h2>
+            <ul>
+              <li class="fragment highlight-red">Diseño</li>
+              <li>Implementación</li>
+              <li>Pruebas</li>
+              <li>Despligue</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Diseño</h2>
+            <img src="img/wireframe.png" />
+          </section>
+          <section>
+            <h2>Fases del desarrollo</h2>
+            <ul>
+              <li>Diseño</li>
+              <li class="fragment highlight-red">Implementación</li>
+              <li>Pruebas</li>
+              <li>Despligue</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Implementación</h2>
+            <img src="img/class-diagram.png" />
+          </section>
+          <section>
+            <h2>Fases del desarrollo</h2>
+            <ul>
+              <li>Diseño</li>
+              <li>Implementación</li>
+              <li class="fragment highlight-red">Pruebas</li>
+              <li>Despligue</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Pruebas</h2>
+            <img src="img/tests.png" />
+          </section>
+          <section>
+            <h2>Fases del desarrollo</h2>
+            <ul>
+              <li>Diseño</li>
+              <li>Implementación</li>
+              <li>Pruebas</li>
+              <li class="fragment highlight-red">Despligue</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Despliegue</h2>
+            <pre>
+              <code data-trim data-noescape data-line-numbers>
+                // package.json
+                "scripts": {
+                  "start": "webpack-dev-server --progress --config webpack.config.dev.js",
+                  "build": "webpack --config webpack.config.build.js",
+                  "predeploy": "npm run build",
+                  "deploy": "gh-pages -d dist"
+                }
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>Futuras ampliaciones</h2>
+          <ul>
+            <li>PvP (Pelea entre dos humanos)</li>
+            <li>Hacer que la IA también golpee</li>
+            <li>Juego en línea contra otra persona</li>
+            <li>Ranking</li>
+            <li>Mejorar el sistema de daño</li>
+            <li>NFTs? 🐒</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Valoración general</h2>
+          <ul>
+            <li class="fragment highlight-green">
+              Sopas de letras y sistema de evaluación
+            </li>
+            <li class="fragment highlight-green">
+              Aprendemos cosas diferentes a sólo programar
+            </li>
+            <li class="fragment highlight-green">
+              Libertad a la hora de decidir qué hacer
+            </li>
+            <li class="fragment highlight-red">
+              Clases de teoría más enfocadas a la tecnología
+            </li>
+            <li class="fragment highlight-red">
+              Debates sobre los temas expuestos
+            </li>
+          </ul>
         </section>
       </div>
     </div>

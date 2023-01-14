@@ -1,6 +1,6 @@
 /*!
 * reveal.js 4.4.0
-* https://angelip2303.github.io/
+* https://angelip2303.github.io/boxing-docs/
 * MIT licensed
 *
 * Copyright (C) 2011-2022 Hakim El Hattab, https://hakim.se
