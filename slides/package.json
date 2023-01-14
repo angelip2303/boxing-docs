@@ -1,25 +1,25 @@
 {
   "name": "reveal.js",
   "version": "4.4.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "https://revealjs.com",
-  "subdomain": "revealjs",
+  "description": "Slides for the Boxing Game project",
+  "homepage": "https://angelip2303.github.io/boxing-docs/",
+  "subdomain": "angelip2303.github.io",
   "main": "dist/reveal.js",
   "module": "dist/reveal.esm.js",
   "license": "MIT",
   "scripts": {
-    "test": "gulp test",
     "start": "gulp serve",
-    "build": "gulp build"
+    "build": "gulp build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d ."
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "https://hakim.se"
+    "name": "Ángel Iglesias Préstamo and Diego Martín Fernández",
+    "web": "https://angelip2303.github.io"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git://github.com/angelip2303/boxing-docs.git"
   },
   "engines": {
     "node": ">=10.0.0"
