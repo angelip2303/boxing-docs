@@ -31,41 +31,85 @@
               <a href="https://angelip2303.github.io/">
                 Ángel Iglesias Préstamo
               </a>
-              y Diego Martín Fernández
+              y
+              <a href="https://github.com/DiegoMfer">
+                Diego Martín Fernández
+              </a>
             </small>
           </h4>
         </section>
+
         <section>
           <section>
             <h2>Tecnologías</h2>
             <ul>
-              <li><a href="https://p5js.org/es/"> p5.js </a></li>
-              <li><a href="https://ml5js.org/"> ml5.js </a></li>
+              <li>
+                <a class="fragment highlight-red" href="https://p5js.org/es/">
+                  p5.js
+                </a>
+              </li>
+              <li>
+                <a href="https://ml5js.org/"> ml5.js </a>
+              </li>
             </ul>
           </section>
-          
           <section>
-            <h3>Ejemplos donde usamos p5.js</h3>
-            <img src="img/healthbarcode.PNG">
+            <h3>Ejemplos de uso de <span style="color: red">p5.js</span></h3>
+            <pre>
+              <code data-trim data-noescape data-line-numbers="4-7,9-11">
+                // HealthBar.js
+                draw(health) {
+                  if (health < 0) return;
+                  // Outer border
+                  p5.stroke(0);
+                  p5.strokeWeight(4);
+                  p5.noFill();
+                  p5.rect(this.x, this.y, this.width, this.height);
+                  // Inner (health) bar
+                  p5.noStroke();
+                  p5.fill(255, 0, 0); // fill RED
+                  p5.rect(this.x, this.y, p5.map(health, 0, 100, 0, this.width), this.height);
+                }
+              </code>
+            </pre>
           </section>
-
           <section>
-            <h3>Ejemplos donde usamos ml5.js</h3>
-            <img src="img/videocapturecode.PNG">
+            <h2>Tecnologías</h2>
+            <ul>
+              <li>
+                <a href="https://p5js.org/es/"> p5.js </a>
+              </li>
+              <li>
+                <a class="fragment highlight-red" href="https://ml5js.org/">
+                  ml5.js
+                </a>
+              </li>
+            </ul>
           </section>
-          
-        </section>
-
-        <section>
-          <h3>Video de prueba</h3>
-          <iframe width="420" height="315"
-            src="https://www.youtube.com/watch?v=TUX-WneEcYI">
-          </iframe>
+          <section>
+            <h3>Ejemplos de uso de <span style="color: red">ml5.js</span></h3>
+            <pre>
+              <code data-trim data-noescape>
+                // HumanPlayer.js 
+                export default class HumanPlayer extends Player {
+                  constructor(video, x, y, width, height, health) {
+                    super(x, y, width, height, health);
+                    this.media = p5.createCapture(video); // we capture the webcam
+                    this.media.size(width, height); // we fit the video to the width and height
+                    // We load the model from the camera source :D
+                    this.poseNet = ml5.poseNet(this.media);
+                    this.poseNet.on("pose", (poses) => this.updatePose(poses));
+                    this.media.hide(); // hide the video element, only show the canvas
+                  }
+                }
+              </code>
+            </pre>
+          </section>
         </section>
 
         <section>
           <h2>Agradecimiento a los testers</h2>
-          <img src="img/collage.png">
+          <img src="img/collage.png" />
         </section>
       </div>
     </div>
