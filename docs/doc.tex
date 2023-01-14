@@ -36,8 +36,7 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
 
-\fancyhead[LE]{\scshape\asignatura}
-\fancyhead[RO]{\titulo}
+\fancyhead[RO]{\nouppercase{\titulo\hfill\asignatura}}
 \fancyfoot[CE,CO]{\thepage}
 
 % --------------------------------------------------------------------
@@ -70,20 +69,26 @@
 % -----------------------------
 % | % Portada del documento % |
 % -----------------------------
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \begin{titlepage}
     \centering
-    \includegraphics[width=0.6\textwidth]{img/uniovi.png}
+    \includegraphics[width=0.3\textwidth]{img/uniovi.eps}
     \vfill
+    \HRule
+    \vspace{0.4cm}
     {\huge\bfseries\titulo\par}
-    \vspace{3cm}
+    \vspace{1.5cm}
     {\Large\itshape\autorAngel\par\vspace{0.1cm}\autorDiego\par}
+    \vspace{0.4cm}
+    \HRule
     \vspace{1.5cm}
     {\LARGE\escuela\par}
     \vspace{0.5cm}
     {\Large\asignatura\par}
     \vfill
-    \universidad\par
+    {\large\universidad\par}
     \fecha
+    \vfill
 \end{titlepage}
 
 % -----------------------------------------
@@ -144,9 +149,7 @@ De alguna forma podríamos decir que el \textit{stack} formado por las dos tecno
 
 \paragraph{Permitir el uso de la cámara} \mbox{} -- La forma en la que se interactúa con el sistema es a través de la cámara. Es por eso que se deberá permitir el uso de la misma para poder jugar a \textit{Boxing Game}.
 
-\subsection{Instalación}
-
-\subsection{Ejecución}
+\subsection{Uso}
 
 \section{Reparto del trabajo}
 \label{section:work}
