@@ -150,17 +150,10 @@ De alguna forma podríamos decir que el \textit{stack} formado por las dos tecno
 \paragraph{Permitir el uso de la cámara} \mbox{} -- La forma en la que se interactúa con el sistema es a través de la cámara. Es por eso que se deberá permitir el uso de la misma para poder jugar a \textit{Boxing Game}.
 
 \subsection{Uso}
-La aplicación se encarga de localizar las distintas partes del cuerpo, por lo que lo único que tenemos que hacer es mover los puños de forma que hagan daño al rival. El rival recibe daño cuando uno de nuestros dos puños (representados por puntos rojos en la pantalla) hace colisión con el cuerpo del rival (representados por los puntos blancos). Estas colisiones están medidas en un radio al rededor de un punto que puede ser cambiado en el código fuente. El jugador que primero se quede sin vida es el que pierde.
+El modelo clasifica las partes del cuerpo del jugador, por lo que lo único que tenemos que hacer es mover los puños de forma que hagan daño al rival. Este recibe daño cuando uno de nuestros puños -- representados por puntos rojos en la pantalla -- hace colisión con el cuerpo del rival: representados por los puntos blancos. Estas colisiones tienen un margen de error -- en torno a un radio -- para que sea más fácil acertar un impacto. El jugador que primero se quede sin vida es el perdedor.
 
 \section{Reparto del trabajo}
 \label{section:work}
--- Programación de la aplicación -> Ángel y Diego
--- Creación de los repositorios -> Ángel
--- Despliege e integración continua -> Ángel
--- Grabación de los videos -> Diego
--- Documentación -> Ángel y Diego
--- Presentación con reveal.js -> Ángel y Diego
--- Edición de video -> Ángel y Diego
--- Humor -> Diego
--- Cringe -> Ángel
+Inicialmente, Ángel creó los repositorios y se encargó de realizar un \textit{modelo mínimo viable} que luego fue ampliado por Diego: depurándolo y mejorándolo en general. Además, Ángel se encargó del despligue y la integración continua del sistema. Diego grabó y editó el vídeo promocional. Finalmente, la presentación se hizo conjuntamente. Si bien la documentación fue realizada por Ángel.
+
 \end{document}
